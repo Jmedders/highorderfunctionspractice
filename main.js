@@ -59,7 +59,7 @@ function highorder(array){
     return element*element;
   });
 }
-console.log(highorder(nums));
+// console.log(highorder(nums));
 //output [4,9,16];
 //see next commented text for more details
 
@@ -68,7 +68,7 @@ function highorder2(array){
     return element > 3;
   });
 }
-console.log(highorder2(nums));
+// console.log(highorder2(nums));
 //output [4];
 
 //check this ^^ log (line 62) to see what index and originalarray arguments
@@ -132,3 +132,41 @@ function chainAnimals(array){
   });
 }
 // console.log(chainAnimals(animals));
+
+
+//reduce is another array method
+//it takes a function & optional initial value as inputs
+//like a map it executes the function for each item in the array
+//returns value that results
+//unlike map and filter reduces don't have to return an array
+//they can return anything (a string for example)
+
+//reduces are very powerful, here's the syntax
+
+function reduceAnimals(array){
+  return array.reduce(function(prev, curr, index, entirearray){
+    if(curr.coolFactor > 6){
+      curr.approval = true;
+      prev.push(curr.type)
+    }
+    return prev;
+  }, []);
+}
+// console.log(reduceAnimals(animals));
+
+//on the first iteration prev is the optional inital value seen on line 153 ()
+//curr starts out as if it were array[0];
+//it checks to see if the condition is met and if so changes approval to true
+//and pushes the object types (jellyfish and butterfly) into the new array
+//the result is ['jellyfish', 'butterfly']
+
+//here's another more simple reduce example
+
+function reduceNums(array){
+  return array.reduce(function (prev, curr) {
+    return prev + curr;
+  }, 5);
+}
+// console.log(reduceNums(nums));
+//in this example i'm simply adding up all the numbers in the array and giving
+//an initial value of 5. the result is 14 (2 + 3 + 4 + 5)
