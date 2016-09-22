@@ -17,4 +17,21 @@ function traditionalFn(array){
   }
   return array;
 }
-console.log(traditionalfn(nums));
+console.log(traditionalFn(nums));
+
+//Here I'll alter all the elements of the animals array to have an approval of true
+//Only for animals with a coolFactor of > 6;
+//Additionally I want these elements that have coolFactor > 6 to be pushed into a new array
+//Still using a traditional for loop
+
+function traditionalApproval(array){
+  var newArr = [];
+  for (var i = 0; i < array.length; i++) {
+    if(array[i].coolFactor > 6){
+      array[i].approval = true;
+      newArr.push(array[i]);
+    }
+  }
+  return newArr;
+}
+console.log(traditionalApproval(animals));
