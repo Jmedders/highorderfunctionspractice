@@ -46,19 +46,34 @@ function traditionalApproval(array){
 //element of that array. These methods return NEW ARRAYS, and leave the original
 //unaltered. I'm also incorporating an arrow array as they look very nice with
 //these high order functions
+
+//map acts on every element they come into contact with and can alter them
 function mapNums(array){
   return array.map(e => {
     return e*e;
   })
 }
-console.log(mapNums(nums));
+// console.log(mapNums(nums));
 //output [4,9,16];
 
 //filter function to make a NEW ARRAY containing numbers only greater than 3;
+//filter returns elements only if they pass a conditional
 function filterNums(array){
   return array.filter(e => {
     return e > 3;
   })
 }
-console.log(filterNums(nums));
+// console.log(filterNums(nums));
 //output [4];
+
+//Those do look pretty nice, but can they take on arrays with nested objects?
+//YOU BET!
+
+//in this map, i'll change every animals approval to true;
+function mapAnimals(array){
+  return array.map(e => {
+    e.approval = true;
+    return e;
+  })
+}
+console.log(mapAnimals(animals));
