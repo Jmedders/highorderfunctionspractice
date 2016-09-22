@@ -47,6 +47,25 @@ function traditionalApproval(array){
 //unaltered. I'm also incorporating an arrow array as they look very nice with
 //these high order functions
 
+//when using these high order functions you must return the callback function
+//in other words you must type return or declare a variable before you type array.map
+// and then return that variable further down
+
+//map can have 3 arguments passed to them
+
+function highorder(array){
+  return array.map(function(element, index, originalarray){
+    console.log(index, originalarray);
+    return element*element;
+  });
+}
+// console.log(highorder(nums));
+
+//check this ^^ log to see what index and originalarray arguments
+//you'll find that index is very comparable to the normal i you could log in a for loop;
+//it starts at 0. meanwhile the originalarray does not change
+//the result of a map is a NEW ARRAY and not the original
+
 //map acts on every element they come into contact with and can alter them
 function mapNums(array){
   return array.map(e => {
@@ -102,4 +121,4 @@ function chainAnimals(array){
     return ele
   });
 }
-console.log(chainAnimals(animals));
+// console.log(chainAnimals(animals));
