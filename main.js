@@ -51,7 +51,7 @@ function traditionalApproval(array){
 function mapNums(array){
   return array.map(e => {
     return e*e;
-  })
+  });
 }
 // console.log(mapNums(nums));
 //output [4,9,16];
@@ -61,7 +61,7 @@ function mapNums(array){
 function filterNums(array){
   return array.filter(e => {
     return e > 3;
-  })
+  });
 }
 // console.log(filterNums(nums));
 //output [4];
@@ -74,6 +74,32 @@ function mapAnimals(array){
   return array.map(e => {
     e.approval = true;
     return e;
-  })
+  });
 }
-console.log(mapAnimals(animals));
+// console.log(mapAnimals(animals));
+
+//in this filter i'll return only the animals with coolFactor > 6;
+
+function filterAnimals(array){
+  return array.filter(e => {
+    return e.coolFactor > 6;
+  });
+}
+// console.log(filterAnimals(animals));
+
+//this is such a clean and easy way to do for loops.
+//but it needs to be stated that this can all be done with for loops
+//that's essentially what's happening under the hood
+
+//you can also chain these methods!!!
+
+//here i'll recreate the 2nd function seen on this page
+function chainAnimals(array){
+  return array.filter(e => {
+    return e.coolFactor > 6;
+  }).map(ele => {
+    ele.approval = true;
+    return ele
+  });
+}
+console.log(chainAnimals(animals));
