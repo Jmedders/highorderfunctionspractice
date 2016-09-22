@@ -51,7 +51,7 @@ function traditionalApproval(array){
 //in other words you must type return or declare a variable before you type array.map
 // and then return that variable further down
 
-//map can have 3 arguments passed to them
+//map and filter can have 3 arguments passed to them
 
 function highorder(array){
   return array.map(function(element, index, originalarray){
@@ -59,9 +59,19 @@ function highorder(array){
     return element*element;
   });
 }
-// console.log(highorder(nums));
+console.log(highorder(nums));
+//output [4,9,16];
+//see next commented text for more details
 
-//check this ^^ log to see what index and originalarray arguments
+function highorder2(array){
+  return array.filter(function(element, index, originalarray){
+    return element > 3;
+  });
+}
+console.log(highorder2(nums));
+//output [4];
+
+//check this ^^ log (line 62) to see what index and originalarray arguments
 //you'll find that index is very comparable to the normal i you could log in a for loop;
 //it starts at 0. meanwhile the originalarray does not change
 //the result of a map is a NEW ARRAY and not the original
