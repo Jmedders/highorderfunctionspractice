@@ -170,3 +170,11 @@ function reduceNums(array){
 // console.log(reduceNums(nums));
 //in this example i'm simply adding up all the numbers in the array and giving
 //an initial value of 5. the result is 14 (2 + 3 + 4 + 5)
+
+function reducer(array){
+  return array.reduce(function (prev, curr) {
+    prev.push("how do you feel about " + curr.type + "?");
+    return prev;
+  },[])
+}
+console.log(reducer(animals));
