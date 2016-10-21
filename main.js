@@ -177,4 +177,11 @@ function reducer(array){
     return previous;
   },[])
 }
-console.log(reducer(animals));
+// console.log(reducer(animals));
+var mix = [2,4, 'lush', 1];
+function filtrate(array){
+  return array.filter(e => {
+    return typeof(e) == 'string';
+  });
+}
+console.log(filtrate(mix));
