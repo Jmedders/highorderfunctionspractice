@@ -172,9 +172,9 @@ function reduceNums(array){
 //an initial value of 5. the result is 14 (2 + 3 + 4 + 5)
 
 function reducer(array){
-  return array.reduce(function (prev, curr) {
-    prev.push("how do you feel about " + curr.type + "?");
-    return prev;
+  return array.reduce(function (previous, current) {
+    previous.push("how do you feel about " + current.type + "?");
+    return previous;
   },[])
 }
 console.log(reducer(animals));
