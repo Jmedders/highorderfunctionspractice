@@ -184,4 +184,12 @@ function filtrate(array){
     return typeof(e) == 'string';
   });
 }
-console.log(filtrate(mix));
+// console.log(filtrate(mix));
+
+function mapMix(array){
+  return array.map(e => {
+    return typeof(e) == 'string';
+  })
+}
+
+console.log(mapMix(mix));
